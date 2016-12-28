@@ -144,6 +144,33 @@ var _ = Describe("Out Command", func() {
 			})
 		})
 
+		It("lets people skip the binding step", func() {
+			request = out.Request{
+				Source: resource.Source{
+					API:           "https://api.run.pivotal.io",
+					Username:      "awesome@example.com",
+					Password:      "hunter2",
+					Organization:  "secret",
+					Space:         "volcano-base",
+					SkipCertCheck: true,
+				},
+				Params: out.Params{
+					Service:        "foo",
+					Plan:           "bar",
+					InstanceName:   "baz",
+					CurrentAppName: "fox",
+					SkipBinding:		true,
+				},
+			}
+
+			_, err := command.Run(request)
+			Ω(err).ShouldNot(HaveOccurred())
+
+			By("bind service instance to app")
+			Ω(cloudFoundry.BindServiceCallCount()).Should(Equal(0))
+		})
+
+
 		It("lets people skip the certificate check", func() {
 			request = out.Request{
 				Source: resource.Source{
