@@ -27,7 +27,7 @@ resources:
     username: {{docker-username}}
     email: {{docker-email}}
     password: {{docker-password}}
-    repository: idahobean/cf-service-resource
+    repository: {{docker-repository}}
 
 - name: buildroot-base-image
   type: docker-image
