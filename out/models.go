@@ -13,6 +13,8 @@ type Params struct {
 	InstanceName     string    `json:"instance_name"`
 	ManifestPath     string    `json:"manifest"`
 	CurrentAppName   string    `json:"current_app_name"`
+	SkipBinding      bool    	 `json:"skip_binding"`
+	SkipRestage      bool      `json:"skip_restage"`
 }
 
 type Response struct {

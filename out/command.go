@@ -44,19 +44,23 @@ func (command *Command) Run(request Request) (Response, error) {
 		return Response{}, err
 	}
 
-	err = command.paas.BindService(
-		request.Params.CurrentAppName,
-		request.Params.InstanceName,
-	)
-	if err != nil {
-		return Response{}, err
+  if !request.Params.SkipBinding {
+		err = command.paas.BindService(
+			request.Params.CurrentAppName,
+			request.Params.InstanceName,
+		)
+		if err != nil {
+			return Response{}, err
+		}
 	}
 
-	err = command.paas.RestageApp(
-		request.Params.CurrentAppName,
-	)
-	if err != nil {
-		return Response{}, err
+	if !request.Params.SkipRestage {
+		err = command.paas.RestageApp(
+			request.Params.CurrentAppName,
+		)
+		if err != nil {
+			return Response{}, err
+		}
 	}
 
 	return Response{
