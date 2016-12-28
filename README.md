@@ -4,7 +4,7 @@ An output only resource that will create/bind service to a
 Cloud Foundry Application.  
 based on  
 * [concourse/cf-resource](https://github.com/concourse/cf-resource)  
-* [idahobean/cf-docker-resource](https://github.com/idahobean/cf-docker-resource)
+* [mcb/cf-docker-resource](https://github.com/mcb/cf-docker-resource)
 
 ## Source Configuration
 
@@ -27,7 +27,7 @@ based on
 #### Parameters
 
 * `service`: *Required.* Service name.
-* `plan`: *Required.* Plan name of the service. 
+* `plan`: *Required.* Plan name of the service.
 * `instance_name`: *Required.* Service instance name.
 * `manifest`: *(Either) Required.* Path to an application manifest file.
 * `current_app_name`: *(Either) Required.* The name of the application to bind service.  
@@ -42,7 +42,7 @@ resource_types:
   - name: cf-service-resource
     type: docker-image
     source:
-      repository: idahobean/cf-service-resource
+      repository: mcb/cf-service-resource
 
 resources:
   - name: resource-web-app

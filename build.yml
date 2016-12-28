@@ -7,10 +7,10 @@ image_resource:
 
 inputs:
 - name: cf-service-resource
-  path: gopath/src/github.com/idahobean/cf-service-resource
+  path: gopath/src/github.com/mcb/cf-service-resource
 
 outputs:
 - name: built-resource
 
 run:
-  path: gopath/src/github.com/idahobean/cf-service-resource/scripts/ci
+  path: gopath/src/github.com/mcb/cf-service-resource/scripts/ci

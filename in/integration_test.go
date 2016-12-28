@@ -13,8 +13,8 @@ import (
 
 	"github.com/onsi/gomega/gexec"
 
-	"github.com/idahobean/cf-service-resource"
-	"github.com/idahobean/cf-service-resource/in"
+	"github.com/mcb/cf-service-resource"
+	"github.com/mcb/cf-service-resource/in"
 )
 
 var _ = Describe("In", func() {
@@ -25,7 +25,7 @@ var _ = Describe("In", func() {
 	)
 
 	JustBeforeEach(func() {
-		binPath, err := gexec.Build("github.com/idahobean/cf-service-resource/in/cmd/in")
+		binPath, err := gexec.Build("github.com/mcb/cf-service-resource/in/cmd/in")
 		Ω(err).ShouldNot(HaveOccurred())
 
 		tmpDir, err = ioutil.TempDir("", "cf_service_resource_in")

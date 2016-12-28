@@ -18,7 +18,7 @@ resources:
 - name: cf-service-resource
   type: git
   source:
-    uri: https://github.com/idahobean/cf-service-resource.git
+    uri: https://github.com/mcb/cf-service-resource.git
     branch: master
 
 - name: cf-service-resource-image

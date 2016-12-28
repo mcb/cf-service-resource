@@ -3,7 +3,7 @@ package out
 import (
 	"time"
 
-	"github.com/idahobean/cf-service-resource"
+	"github.com/mcb/cf-service-resource"
 )
 
 type Command struct {
